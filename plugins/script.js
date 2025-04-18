@@ -4,30 +4,24 @@ contact me 94760091093
 ᴘʟᴇᴀꜱᴇ ᴅᴏɴᴛ ʀᴇᴍᴏᴠᴇ ᴏᴡɴᴇʀ ᴄʀᴇᴅɪᴛꜱ 💀📍
 */
 
-const more = String.fromCharCode(8206);
-const readMore = more.repeat(4001);
-
 const fetch = require('node-fetch');
 const config = require('../config');    
 const { cmd } = require('../command');
 
 cmd({
-    pattern: "script",
-    alias: ["repo", "sc", "info"],
+    pattern: "repo",
+    alias: ["sc", "script", "info"],
     desc: "Fetch information about a GitHub repository.",
-    react: "🎗️",
+    react: "📂",
     category: "info",
     filename: __filename,
 },
 async (conn, mek, m, { from, reply }) => {
-    const githubRepoURL = 'https://github.com/prince2133/DEVIL-TECH-MD';
+    const githubRepoURL = 'https://github.com/prince2133/Mage-pak';
 
     try {
-        // Validate and extract repo info
-        const match = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
-        if (!match) return reply("Invalid GitHub URL format.");
-
-        const [, username, repoName] = match;
+        // Extract username and repo name from the URL
+        const [, username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
 
         // Fetch repository details using GitHub API
         const response = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
@@ -47,7 +41,7 @@ async (conn, mek, m, { from, reply }) => {
 *╰─────────────────┈⊷*
 *╭━━━〔 𝐃𝐄𝐕𝐈𝐋 𝐓𝐄𝐂𝐇 𝐌𝐃 〕━━━┈⊷*
 *┃◈╭───────────────·๏*
-*┃◈┃📑 𝐁𝐎𝐓 𝐑𝐄𝐏𝐎 : https://github.com/${username}/${repoName}*
+*┃◈┃📑 𝐁𝐎𝐓 𝐑𝐄𝐏𝐎 : https://github.com/coming soon*
 *┃◈┃*
 *┃◈┃📑 𝐁𝐎𝐓 𝐖𝐄𝐁 : coming soon*
 *┃◈┃*
@@ -58,36 +52,37 @@ async (conn, mek, m, { from, reply }) => {
 *╰─────────────────────┈⊷*
 > *㊛ Ꮲᴏꪝᴇʀᴅ Вʏ Cʏʙᴇʀ Lᴏᴋᴜ Aꜱʜᴜᴜ Oꜰᴄ❗*`;
 
-        // Send message with video and externalAdReply
+        // Send an image with the formatted info as a caption and context info
         await conn.sendMessage(from, {
-            video: { url: 'https://files.catbox.moe/h3u0el.mp4' },
-            caption: status,
-            contextInfo: {
-                mentionedJid: ['94760091093@s.whatsapp.net'],
-                forwardingScore: 1,
+            image: { url: `https://i.ibb.co/zhvB3bLg/7535.jpg` },
+            caption: formattedInfo,
+            contextInfo: { 
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363395467876104@newsletter',
-                    newsletterName: "𝐃𝐄𝐕𝐈𝐋 𝐓𝐄𝐂𝐇 𝐌𝐃",
-                    serverMessageId: 999
-                },
-                externalAdReply: {
-                    title: '𝐃𝐄𝐕𝐈𝐋 𝐓𝐄𝐂𝐇 𝐌𝐃',
-                    body: 'Cʏʙᴇʀ Lᴏᴋᴜ Aꜱʜᴜᴜ Oꜰᴄ ❗',
-                    mediaType: 1,
-                    sourceUrl: 'https://whatsapp.com/channel/0029Vb9u0GQ8qIzmoGPEtq0s',
-                    thumbnailUrl: 'https://i.imgur.com/c0pAsWe.jpeg',
-                    renderLargerThumbnail: true,
-                    showAdAttribution: true
+                    newsletterName: '𝐃𝐄𝐕𝐈𝐋 𝐓𝐄𝐂𝐇 𝐌𝐃',
+                    serverMessageId: 143
                 }
             }
         }, { quoted: mek });
-        
-        // Send an audio file
+
+        // Send the audio file with context info
         await conn.sendMessage(from, {
-            audio: { url: 'https://cdn.ironman.my.id/i/hmxjch.mp4' }, // Audio URL
+            audio: { url: 'https://github.com/XdTechPro/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a' },
             mimetype: 'audio/mp4',
-            ptt: true
+            ptt: true,
+            contextInfo: { 
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363395467876104@newsletter',
+                    newsletterName: '𝐃𝐄𝐕𝐈𝐋 𝐓𝐄𝐂𝐇 𝐌𝐃',
+                    serverMessageId: 143
+                }
+            }
         }, { quoted: mek });
 
     } catch (error) {
@@ -95,4 +90,3 @@ async (conn, mek, m, { from, reply }) => {
         reply("Sorry, something went wrong while fetching the repository information. Please try again later.");
     }
 });
-                
