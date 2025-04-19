@@ -3,7 +3,7 @@
 contact me 94760091093
 ᴘʟᴇᴀꜱᴇ ᴅᴏɴᴛ ʀᴇᴍᴏᴠᴇ ᴏᴡɴᴇʀ ᴄʀᴇᴅɪᴛꜱ 💀📍
 */
-const { cmd, commands } = require('../lib/command')
+const { cmd, commands } = require('../command')
 const axios = require('axios');
 const cheerio = require('cheerio');
 // cmd command ඔයාහෙ තියන විදියට require කරන්න ❤️
