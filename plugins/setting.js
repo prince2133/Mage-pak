@@ -1,4 +1,5 @@
 const config = require('../config');
+const EnvVar = require('./mongodbenv');
 const {cmd , commands} = require('../command');
 const os = require("os");
 
