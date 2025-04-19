@@ -17,13 +17,13 @@ PREFIX: process.env.PREFIX || "/",
 // add your prifix for bot   
 MODE: process.env.MODE || "private",
 // make bot public-private-inbox-group 
-AUTO_VOICE: process.env.AUTO_VOICE || "false",
+AUTO_VOICE: process.env.AUTO_VOICE || "true",
 // make true for send automatic voices
-AUTO_STICKER: process.env.AUTO_STICKER || "false",
+AUTO_STICKER: process.env.AUTO_STICKER || "true",
 // make true for automatic stickers 
-AUTO_REPLY: process.env.AUTO_REPLY || "false",
+AUTO_REPLY: process.env.AUTO_REPLY || "true",
 // make true or false automatic text reply 
-AUTO_REACT: process.env.AUTO_REACT || "true",
+AUTO_REACT: process.env.AUTO_REACT || "falss",
 // make this true or false for auto react on all msgs
 OWNER_REACT: process.env.OWNER_REACT || "false",
 // make this true or false for owner react on all msgs
