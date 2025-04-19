@@ -1,6 +1,7 @@
 const fs = require('fs');
 const config = require('../config')
 const path = require('path');
+const mongodb = require('../lib/mongodb');
 const {readEnv} = require('../lib/database')
 const {cmd , commands} = require('../command')
 
