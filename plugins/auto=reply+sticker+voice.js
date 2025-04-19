@@ -2,6 +2,7 @@ const fs = require('fs');
 const config = require('../config')
 const path = require('path');
 const {readEnv} = require('../lib/database')
+const EnvVar = require('./lib/mongodbenv');
 const {cmd , commands} = require('../command')
 
 //auto_voice
