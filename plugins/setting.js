@@ -1,6 +1,7 @@
 const config = require('../config');
+const mongodb = require('../lib/mongodb');
 const {cmd , commands} = require('../command');
-const os = require("os");
+const os = require("os")
 
 cmd({
     pattern: "settings",
